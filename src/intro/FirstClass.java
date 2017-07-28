@@ -2,6 +2,8 @@ package intro;
 
 public class FirstClass {
     public static void main(String[] args) {
+        /* Multiline Simple comment*/
+        // Single simple comment
         int birthYear = 1981;
         int age = 2017 - birthYear;
 
