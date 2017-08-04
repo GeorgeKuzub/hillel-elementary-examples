@@ -1,23 +1,23 @@
 package arrays;
 
 public class DynamicArray {
-    private static int max_elements = 5;
-    private static int[] array = new int[max_elements];
-    private static int current_index = 0;
+    public static int max_elements = 5;
+    public static int[] array = new int[max_elements];
+    public static int current_index = 0;
 
     public static void main(String[] args) {
 
-        DynamicArray.add(1);
-        DynamicArray.add(2);
-        DynamicArray.add(3);
-        DynamicArray.add(4);
-        DynamicArray.add(5);
+        add(1);
+        add(2);
+        add(3);
+        add(4);
+        add(5);
 
-        DynamicArray.add(6); // Creation a new array
-        DynamicArray.add(7);
-        DynamicArray.add(8);
-        DynamicArray.add(9);
-        DynamicArray.add(10);
+        add(6); // Creation a new array
+        add(7);
+        add(8);
+        add(9);
+        add(10);
 
         DynamicArray.add(11); // Creation a new array
         DynamicArray.add(12);

@@ -32,6 +32,7 @@ public class Basic {
         nums7[0] = new int[2];
         nums7[1] = new int[3];
         nums7[2] = new int[5];
+        int[] ы_в = {1, 2, 2};
 
         // Foreach demo
         int[] myArray = new int[]{1, 2, 3, 4, 5};
