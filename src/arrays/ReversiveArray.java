@@ -12,12 +12,16 @@ public class ReversiveArray {
         System.out.println(Arrays.toString(arr));
 
         for (int i = 0, j = arr.length - 1; i < arr.length >> 1; i++, j--) {
-            int tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
+            swap(arr, i, j);
         }
 
         System.out.println(Arrays.toString(arr));
 
+    }
+
+    private static void swap(int[] a, int l, int r) {
+        int tmp = a[l];
+        a[l] = a[r];
+        a[r] = tmp;
     }
 }
