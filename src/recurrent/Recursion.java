@@ -2,7 +2,7 @@ package recurrent;
 
 public class Recursion {
     public static void main(String[] args) {
-        System.out.println(fibonachi(5));
+        System.out.println(fibonachi(10));
 
         System.out.println(factorial(4));
         System.out.println(factorial(4));
