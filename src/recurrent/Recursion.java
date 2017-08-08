@@ -1,4 +1,4 @@
-package arrays;
+package recurrent;
 
 public class Recursion {
     public static void main(String[] args) {
