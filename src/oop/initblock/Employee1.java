@@ -1,6 +1,6 @@
-package oop;
+package oop.initblock;
 
-public class Employee {
+public class Employee1 {
     int id;
     String name = "Unknown";
     long year = 1901;
@@ -15,7 +15,7 @@ public class Employee {
         }
     }
 
-    public Employee(int i, long y, String n) {
+    public Employee1(int i, long y, String n) {
         this.id = id;
         this.year = year;
         this.name = name;
