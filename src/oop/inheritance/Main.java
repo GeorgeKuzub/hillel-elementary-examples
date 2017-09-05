@@ -7,8 +7,8 @@ public class Main {
         Employee emp_TarasShevchenko = new Employee("Taras Shevchenko", 100, 2010, 06, 01);
         Employee emp_AnatoliyVolkov = new Employee("Anatoliy Volkov", 100, 2010, 06, 01);
 
-        Manager man_AntuanGorilkin = new Manager("Valdemar Gorilkin", 100, 2010, 06, 01);
-        Manager man_RobertTorpedov = new Manager("Robert Maslov", 100, 2010, 06, 01);
+        Manager man_AntuanGorilkin = new Manager("Antuan Gorilkin", 100, 2010, 06, 01);
+        Manager man_RobertTorpedov = new Manager("Robert Torpedov", 100, 2010, 06, 01);
 
         President ceo_PanasMerzotov = new President("Panas Merzotov");
 
