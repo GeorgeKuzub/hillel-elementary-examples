@@ -3,7 +3,7 @@ package oop.polymorphism.shop.interfaces;
 public interface GoodsInterface {
     double getPrice();
 
-    boolean hasGuarantee();
+    boolean hasWarranty();
 
     String getName();
 
@@ -11,5 +11,5 @@ public interface GoodsInterface {
 
     void setDepartment(DepartmentInterface department);
 
-    String getProducer();
+    String getManufacturer();
 }
