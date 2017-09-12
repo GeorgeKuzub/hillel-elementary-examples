@@ -5,5 +5,5 @@ public interface DepartmentInterface {
 
     EmployeeInterface[] getEmployeeList();
 
-    GoodsInterface[] getGoodsList();
+    ProductInterface[] getProductList();
 }

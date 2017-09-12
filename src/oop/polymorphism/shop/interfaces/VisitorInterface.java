@@ -1,9 +1,9 @@
 package oop.polymorphism.shop.interfaces;
 
 public interface VisitorInterface {
-    void buy(GoodsInterface goods);
+    void buy(ProductInterface goods);
 
-    void returnGoods(GoodsInterface goods);
+    void returnGoods(ProductInterface goods);
 
     String getName();
 }

@@ -1,15 +1,17 @@
-package oop.polymorphism.shop.models;
+package oop.polymorphism.shop.service;
 
+import oop.polymorphism.shop.Helper;
 import oop.polymorphism.shop.interfaces.DepartmentInterface;
 import oop.polymorphism.shop.interfaces.EmployeeInterface;
 
 public abstract class AbstractEmployee implements EmployeeInterface {
     private String name;
     private DepartmentInterface department;
+    private boolean free;
 
-    public AbstractEmployee(String name, DepartmentInterface department) {
+    public AbstractEmployee(String name) {
         this.name = name;
-        this.department = department;
+        free = Helper.getChoice();
     }
 
     @Override
@@ -29,7 +31,12 @@ public abstract class AbstractEmployee implements EmployeeInterface {
 
     @Override
     public boolean isFree() {
-        return (Math.random() > 0.5 ? true : false );
+        return free;
     }
 
+    public void setFree(boolean free) {
+        this.free = free;
+    }
+
+    public abstract void report();
 }

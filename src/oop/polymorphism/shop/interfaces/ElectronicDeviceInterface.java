@@ -1,7 +1,7 @@
 package oop.polymorphism.shop.interfaces;
 
 public interface ElectronicDeviceInterface {
-    void on();
+    boolean on();
 
-    void off();
+    boolean off();
 }

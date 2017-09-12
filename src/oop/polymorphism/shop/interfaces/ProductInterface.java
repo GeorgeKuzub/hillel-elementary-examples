@@ -1,6 +1,7 @@
 package oop.polymorphism.shop.interfaces;
 
-public interface GoodsInterface {
+public interface ProductInterface {
+
     double getPrice();
 
     boolean hasWarranty();
