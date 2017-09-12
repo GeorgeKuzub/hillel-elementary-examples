@@ -28,6 +28,7 @@ public class Main {
         consultant1.setFree(true);
 
         Consultant consultant2 = new Consultant("Natasha");
+        consultant2.setFree(true);
 
         electronicDepartment.addEmployee(consultant1);
         electronicDepartment.addEmployee(consultant2);
@@ -46,7 +47,7 @@ public class Main {
 
         Consultant consultant = administrator.getFreeConsultant(electronicDepartment);
         if (consultant != null) {
-            ConsultResult consultResult = administrator.getFreeConsultant(electronicDepartment).consult(visitor1);
+            ConsultResult consultResult = consultant.consult(visitor1);
 
             switch (consultResult) {
                 case BUY:
@@ -58,7 +59,7 @@ public class Main {
                     break;
             }
         } else {
-            System.out.println("All consultants are busy, please, repeat purchasing later.");
+            System.out.println("All consultants are busy for now, please, repeat purchasing later.");
         }
     }
 }

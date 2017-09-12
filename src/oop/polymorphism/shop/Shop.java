@@ -23,7 +23,7 @@ public class Shop {
     }
 
     public void addVisitor(VisitorInterface visitor) {
-        visitorList[counterDep++] = visitor;
+        visitorList[counterVisitor++] = visitor;
     }
 
 }

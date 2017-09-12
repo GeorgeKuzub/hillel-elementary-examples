@@ -11,7 +11,7 @@ public class Consultant extends AbstractEmployee {
 
     @Override
     public void report() {
-        System.out.println("Report to Manager");
+        System.out.println("Report to Manager.");
     }
 
     public ConsultResult consult(VisitorInterface visitorInterface) {

@@ -13,7 +13,7 @@ public class Mixer extends AbstractProduct implements ElectronicDeviceInterface 
 
     @Override
     public String getManufacturer() {
-        return null;
+        return "Brunno";
     }
 
     @Override

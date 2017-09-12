@@ -1,5 +1,6 @@
 package oop.polymorphism.shop.products;
 
+import oop.polymorphism.shop.Helper;
 import oop.polymorphism.shop.interfaces.DepartmentInterface;
 import oop.polymorphism.shop.interfaces.ProductInterface;
 
@@ -23,7 +24,7 @@ public abstract class AbstractProduct implements ProductInterface {
 
     public AbstractProduct(String name, boolean hasGuarantee, double price, String producer) {
         this.name = name;
-        this.hasWarranty = Math.random() > 0.5 ? false : true;
+        this.hasWarranty = Helper.getChoice();
         this.price = price;
         this.producer = producer;
     }

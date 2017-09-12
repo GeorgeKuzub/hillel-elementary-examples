@@ -9,7 +9,7 @@ public class Manager extends AbstractEmployee {
 
     @Override
     public void report() {
-        System.out.println("Report to Admin");
+        System.out.println("Report to Admin.");
     }
 
     public void sellGoods() {
