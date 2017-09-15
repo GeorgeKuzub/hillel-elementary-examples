@@ -8,10 +8,14 @@ public class LinkedList {
         return head;
     }
 
+    public Node getTail() {
+        return tail;
+    }
+
     public Node find(String data) {
         Node currentNode = head;
 
-        {
+        do {
             if (currentNode.getData().equals(data)) {
                 return currentNode;
             }

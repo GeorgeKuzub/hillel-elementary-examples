@@ -23,6 +23,9 @@ public class Start {
 
         linkedList.remove("cc");
         showLinkedList(linkedList);
+
+        linkedList.insertBefore("00");
+        showLinkedList(linkedList);
     }
 
     public static void showLinkedList(LinkedList linkedList) {
@@ -31,5 +34,6 @@ public class Start {
             System.out.println(currentNode.getData());
             currentNode = currentNode.getNext();
         }
+        System.out.println();
     }
 }
