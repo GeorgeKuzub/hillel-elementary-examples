@@ -11,9 +11,9 @@ public class MyQueue {
     public MyQueue(int size) {
         maxSize = size;
         arr = new long[maxSize];
-        head = 0;
-        tail = 0;
-        nItems = 0;
+//        head = 0;
+//        tail = 0;
+//        nItems = 0;
     }
 
     public long peek() {

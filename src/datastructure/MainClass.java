@@ -52,9 +52,10 @@ public class MainClass {
         myQueue.add(80);
 
         while (!myQueue.isEmpty()) {
-            long l = myQueue.peek();
+            long l = myQueue.poll();
             System.out.print(l + " ");
         }
         System.out.println();
+        System.out.println("Is our queue empty? - Answer: " + myQueue.isEmpty());
     }
 }
