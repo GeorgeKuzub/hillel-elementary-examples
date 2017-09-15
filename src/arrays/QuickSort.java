@@ -45,8 +45,7 @@ public class QuickSort {
 
         if (r > first) {
             sort(first, r);
-        }
-        ;
+        };
     }
 
     private static void swap(int l, int r) {
