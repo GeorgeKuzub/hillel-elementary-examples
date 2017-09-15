@@ -1,11 +1,15 @@
-package datastrucure;
+package datastructure;
 
-public class Stack {
+/**
+ * The class StackC demonstrates the simple data structure - Stack (for characters) *
+ */
+
+public class StackC {
     private int size;
     private char[] array;
     private int sp;
 
-    public Stack(int size) {
+    public StackC(int size) {
         this.size = size;
         array = new char[size];
     }
