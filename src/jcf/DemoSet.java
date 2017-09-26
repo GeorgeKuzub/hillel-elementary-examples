@@ -4,24 +4,22 @@ import java.util.*;
 
 public class DemoSet {
     public static void main(String[] args) {
-        treeSetDemo();
+//        treeSetDemo();
 //        hashSetDemo();
-//        hashSetCarDemo();
+        hashSetCarDemo();
 
-
-//        hashSetCarDemo();
     }
 
     private static void hashSetCarDemo() {
-        Car car1 = new Car("Ford");
-        Car car2 = new Car("Nissan");
-        Car car3 = new Car("Lada");
-        Car car4 = new Car("Toyota");
-        Car car5 = new Car("KIA");
-        Car car6 = new Car("KIA");
-        Car car7 = new Car("DODGE");
+        Car car1 = new Car("Ford", 1990);
+        Car car2 = new Car("Nissan", 2001);
+        Car car3 = new Car("Lada", 1992);
+        Car car4 = new Car("Toyota", 1923);
+        Car car5 = new Car("KIA", 1234);
+        Car car6 = new Car("KIA", 2001);
+        Car car7 = new Car("DODGE", 2130);
 
-        Set<Car> cars = new LinkedHashSet<>();
+        Set<Car> cars = new HashSet<>();
         cars.add(car1);
         cars.add(car2);
         cars.add(car3);
@@ -30,44 +28,29 @@ public class DemoSet {
         cars.add(car6);
         cars.add(car7);
 
-        Set<Car> newCars = new HashSet<>(cars);
-        showElements3(newCars);
-
-
-        Iterator<Car> iter = newCars.iterator();
-        newCars.remove(car2); // Illegal, do not do as that
-        while (iter.hasNext()) {
-            Car currentCar = iter.next();
-            if (currentCar.equals(car3)) {
-                iter.remove();
-            }
-        }
-
-
         // Do not do it
 //        for (Car car: newCars) {
-//            if (car.getModel().equals("Ford")) {
+//            if (car.getName().equals("Ford")) {
 //                newCars.remove(car);
 //            }
 //        }
 
-        System.out.println();
-        showElements3(newCars);
+        showElements3(cars);
     }
 
     private static void treeSetDemo() {
-        Car car1 = new Car("Ford");
-        Car car2 = new Car("Nissan");
-        Car car3 = new Car("Lada");
-        Car car4 = new Car("Toyota");
-        Car car5 = new Car("KIA");
-        Car car6 = new Car("KIA");
-        Car car7 = new Car("DODGE");
+        Car car1 = new Car("Ford", 1990);
+        Car car2 = new Car("Nissan", 2001);
+        Car car3 = new Car("Lada", 1992);
+        Car car4 = new Car("Toyota", 1923);
+        Car car5 = new Car("KIA", 1234);
+        Car car6 = new Car("KIA", 2001);
+        Car car7 = new Car("DODGE", 2130);
 
         Set<Car> cars = new TreeSet<>(new Comparator<Car>() {
             @Override
             public int compare(Car o1, Car o2) {
-                return o1.getModel().compareTo(o2.getModel());
+                return o1.getName().compareTo(o2.getName());
             }
         });
 
@@ -79,6 +62,7 @@ public class DemoSet {
         cars.add(car6);
         cars.add(car7);
 
+        List<String> list = new ArrayList<>();
 
 
         showElements3(cars);
@@ -102,8 +86,8 @@ public class DemoSet {
     private static void showElements3(Set<Car> integerSet) {
         for (Iterator<Car> it = integerSet.iterator(); it.hasNext(); ) {
             Car currentCar = it.next();
-//            System.out.println(currentCar + "; hashCode = " + currentCar.hashCode());
-            System.out.println(currentCar + "; ");
+            System.out.println(currentCar + "; hashCode = " + currentCar.hashCode());
+//            System.out.println(currentCar + "; ");
         }
     }
 
