@@ -3,6 +3,7 @@ package jcf.map;
 import jcf.Car;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class HashMapDemo {
@@ -28,12 +29,19 @@ public class HashMapDemo {
         mapCars.put(car7, "Super  car - DODGE 2130");
 
 
-        for (Map.Entry<Car, String> entry : mapCars.entrySet()) {
-            entry.setValue(entry.getValue()+"_");
-        }
+//        for (Map.Entry<Car, String> entry : mapCars.entrySet()) {
+//            entry.setValue(entry.getValue()+"_");
+//        }
+//
+//        for (String el : mapCars.values()) {
+//            System.out.println(el);
+//        }
 
-        for (String el : mapCars.values()) {
-            System.out.println(el);
+
+        Iterator<Car> iterator = mapCars.keySet().iterator();
+        while (iterator.hasNext()) {
+            Car car = iterator.next();
+            System.out.println(car);
         }
 
 

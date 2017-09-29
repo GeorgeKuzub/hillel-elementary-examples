@@ -22,6 +22,7 @@ public class QueueDemo {
         printQueue(queue);
 
         System.out.println("_____________________");
+
         Queue<Character> qc = new LinkedList<>();
         for (char c : "I like Java".toCharArray()) {
             qc.offer(c);
