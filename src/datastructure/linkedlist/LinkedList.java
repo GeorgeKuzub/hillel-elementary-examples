@@ -1,6 +1,9 @@
 package datastructure.linkedlist;
 
-public class LinkedList {
+
+import java.util.Iterator;
+
+public class LinkedList implements Iterable<Node> {
     private Node head;
     private Node tail;
 
@@ -93,4 +96,25 @@ public class LinkedList {
 
     }
 
+    @Override
+    public Iterator<Node> iterator() {
+        return new Iterator<Node>() {
+            private Node currentNode = head;
+
+            @Override
+            public boolean hasNext() {
+                return (currentNode != tail);
+            }
+
+            @Override
+            public Node next() {
+                return currentNode = currentNode.getNext();
+            }
+
+            @Override
+            public void remove() {
+                LinkedList.this.remove(currentNode);
+            }
+        };
+    }
 }
