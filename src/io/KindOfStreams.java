@@ -8,21 +8,30 @@ import java.net.URL;
 
 public class KindOfStreams {
     public static void main(String[] args) throws IOException {
+        String fileName = "res/myFile.txt";
         try (InputStream inFile = new FileInputStream("res/myFile.txt")) {
             readByteOutToChar(inFile);
+        } catch (IOException e) {
+            throw new IOException("Exception when open and read file " + fileName);
         }
         System.out.println("\n\n");
 
-        try (InputStream inUrl = new URL("http://google.com").openStream()) {
+        String url = "http://google.com";
+        try (InputStream inUrl = new URL(url).openStream()) {
             readByteOutToChar(inUrl);
+        } catch (IOException e) {
+            throw new IOException("Exception when open your URL " + url);
         }
+
         System.out.println("\n\n");
 
-        try (InputStream inByte = new ByteArrayInputStream(new byte[]{65, 66, 67, 68, 69, 70});) {
+        byte[] data = new byte[]{65, 66, 67, 68, 69, 70};
+        try (InputStream inByte = new ByteArrayInputStream(data);) {
             readByteOutToChar(inByte);
+        } catch (IOException e) {
+            throw new IOException("Exception happened during an attempt to load the array data: " + data);
         }
         System.out.println("\n\n");
-
     }
 
     public static void readByteOutToChar(InputStream in) throws IOException {
