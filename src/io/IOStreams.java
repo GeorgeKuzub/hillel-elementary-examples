@@ -3,20 +3,74 @@ package io;
 import java.io.*;
 import java.util.Arrays;
 import java.util.Properties;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
 
 public class IOStreams {
-    public static void main(String[] args) {
-        getFilesInCurrentFolder();
-        makeNewDir();
-        makeNewEmptyFile();
-        makeNewFileInsideExistDir();
+    public static void main(String[] args) throws IOException {
+        Car myCar = new Car("BMW", 2017, "Yuriy");
+        myCar.setTenant(new Tenant("Olga"));
 
-        propertiesExample();
-        primitivesExample();
-        bufferedRead();
-        copy();
-        tryWithResources();
-        OldStyle();
+        save(myCar);
+
+        Car deserializedCar = load();
+
+        System.out.println(deserializedCar);
+        System.out.println(deserializedCar == myCar);
+
+
+        writeToZipFile();
+        readFromZipFile();
+
+//        getFilesInCurrentFolder();
+//        makeNewDir();
+//        makeNewEmptyFile();
+//        makeNewFileInsideExistDir();
+//
+//        propertiesExample();
+//        primitivesExample();
+//        bufferedRead();
+//        copy();
+//        tryWithResources();
+//        OldStyle();
+    }
+
+
+    private static void writeToZipFile() {
+        byte age = 16;
+        String name = "Lexus";
+        int[] repairYears = {2001, 2004, 2008, 2012, 2017};
+
+        try (DataOutputStream dataOutput = new DataOutputStream(new GZIPOutputStream(new BufferedOutputStream(new FileOutputStream(new File("res/data.zip")))))) {
+            dataOutput.writeByte(age);
+            dataOutput.writeUTF(name);
+            for (int yearElement : repairYears) {
+                dataOutput.writeInt(yearElement);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void readFromZipFile() {
+        byte age;
+        String name;
+        int[] repairYears;
+
+        try (DataInputStream dataInput = new DataInputStream(new GZIPInputStream(new BufferedInputStream(new FileInputStream(new File("res/data.zip")))))) {
+            age = dataInput.readByte();
+            repairYears = new int[age];
+            name = dataInput.readUTF();
+
+            repairYears[0] = dataInput.readInt();
+            repairYears[1] = dataInput.readInt();
+            repairYears[2] = dataInput.readInt();
+            repairYears[3] = dataInput.readInt();
+            repairYears[4] = dataInput.readInt();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void getFilesInCurrentFolder() {
@@ -169,4 +223,21 @@ public class IOStreams {
         }
     }
 
+    public static void save(Car car) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("res/car.dat"))) {
+            outputStream.writeObject(car);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Car load() {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("res/car.dat"))) {
+            return (Car) inputStream.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
