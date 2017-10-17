@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Welcome extends JFrame {
     Welcome(){
@@ -14,6 +16,16 @@ public class Welcome extends JFrame {
                 JOptionPane.showMessageDialog(null, "Hello)))");
             }
         });
+
+        jButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (e.getButton() == MouseEvent.BUTTON3) {
+                    System.out.println("Right Button Pressed");
+                }
+            }
+        });
+
         Container contentPane = getContentPane();
         setBounds(100, 100, 100, 100);
         contentPane.add(jButton);
