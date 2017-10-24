@@ -3,6 +3,7 @@ package innerclasses;
 public class Outer {
     int localInt = -1;
     private Inner inner = new Inner();
+    private Double data = new Double(100);
 
     public Inner getInnerInst() {
         return inner;
