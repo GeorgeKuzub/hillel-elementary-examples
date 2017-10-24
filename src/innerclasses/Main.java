@@ -3,6 +3,9 @@ package innerclasses;
 public class Main {
     public static void main(String[] args) {
         Outer outer = new Outer();
+
+        // The Inner class instantiates inside the Outer class.
+        // and getInnerInst() is just a getter that return instance of Inner class.
         Outer.Inner innerInstance = outer.getInnerInst();
 
         outer.anonymous2();
@@ -18,6 +21,7 @@ public class Main {
 
         // if you need to make only instance of inner class you have to have already instantiated
         // reference to outer class.
+        // In this case the reference to Outer object will be passed to the constructor of Inner obj implicitly(!).
         Outer outer1 = new Outer();
         Outer.Inner inner = outer1.new Inner();
         inner.someLocalMethod();
