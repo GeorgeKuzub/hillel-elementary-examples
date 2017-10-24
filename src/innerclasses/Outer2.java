@@ -1,17 +1,22 @@
 package innerclasses;
 
 public class Outer2 {
+    private Outer.HelloWorld someWayToSayHello;
 
-    void demoOuterInner() {
-
+    public void demoOuterInner() {
+        someWayToSayHello = anonymous();
     }
 
-    void anonymous() {
-        Outer.HelloWorld greeting = new Outer.HelloWorld() {
+    private Outer.HelloWorld anonymous() {
+        return new Outer.HelloWorld() {
             @Override
             public void greet() {
-                System.out.println("Hello World");
+                System.out.println("Chao!");
             }
         };
+    }
+
+    public void say() {
+        someWayToSayHello.greet();
     }
 }

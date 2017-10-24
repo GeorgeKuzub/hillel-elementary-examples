@@ -53,8 +53,8 @@ public class Outer {
         private int intInnerField = 0;
         private String strInnerField = new String();
 
-//        public Inner() {
-//        }
+        public Inner() {
+        }
 
         void someLocalMethod() {
             /* LocalSpecificClass classes are always private! */

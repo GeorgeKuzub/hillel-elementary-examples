@@ -4,24 +4,28 @@ public class Main {
     public static void main(String[] args) {
         Outer outer = new Outer();
         Outer.Inner innerInstance = outer.getInnerInst();
-        innerInstance.someLocalMethod();
 
         outer.anonymous2();
         outer.anonymous();
+        new Outer2().say();
 
         /* What to do, if you're going to use internal class separately  from outer class? */
 
           // It doesn't work since default constructor waits the reference to outer object (parent)
-          // so it's impossible to do in this way
+        // so it's impossible to do in this way!
           //Outer.Inner innerClass1 = new Outer.Inner();
 
 
-        // It works only if class is static (nested)
+        // if you need to make only instance of inner class you have to have already instantiated
+        // reference to outer class.
+        Outer outer1 = new Outer();
+        Outer.Inner inner = outer1.new Inner();
+        inner.someLocalMethod();
+
+        // But you have a choice to make it more clearly without the need to create an outer class.
         // You may use the nested classes separate from his parent (outer) class
+        // Important: do not forget that you lose the reference between inner class and outer (Outer.this)
         // Outer.Inner someInner = new Outer.Inner();
-
-
-
 
     }
 }
