@@ -17,7 +17,7 @@ public class Main {
 
 
         // if you need to make only instance of inner class you have to have already instantiated
-        // reference to outer class.
+        // reference to outer class that implicitly passes to constructor of Inner class.
         Outer outer1 = new Outer();
         Outer.Inner inner = outer1.new Inner();
         inner.someLocalMethod();
