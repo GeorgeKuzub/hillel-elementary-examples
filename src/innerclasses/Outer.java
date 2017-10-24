@@ -9,6 +9,17 @@ public class Outer {
         return inner;
     }
 
+    void anonymous2() {
+
+        System.out.println(new Object() {
+            void print() {
+                System.out.println("Hallo and Chao!");
+            }
+
+        }.getClass().getName());
+
+    }
+
     void anonymous() {
 
         HelloWorld greeting1 = new HelloWorld() {
@@ -32,14 +43,18 @@ public class Outer {
         System.out.println(greeting2.getClass().getName());
     }
 
-    protected interface HelloWorld {
+     interface HelloWorld {
         public void greet();
     }
 
-    static class Inner {
+
+    class Inner {
         int localInt = 1;
         private int intInnerField = 0;
         private String strInnerField = new String();
+
+//        public Inner() {
+//        }
 
         void someLocalMethod() {
             /* LocalSpecificClass classes are always private! */
@@ -47,11 +62,8 @@ public class Outer {
                 /* modifiers of accessibility for fields and methods don't work */
                 int localIntField = 4;
                 String localStringField = "ABBA";
-                int localInt = 2;
-
-                LocalSpecificClass(Inner ref) {
-                }
-
+                int rr = 2;
+                int localInt = 10;
 
                 @Override
                 public String toString() {
@@ -59,17 +71,14 @@ public class Outer {
                 }
             }
 
-            LocalSpecificClass localSpec = new LocalSpecificClass(this);
-            System.out.println("Get localInt from outer scope: " + localInt);
+            LocalSpecificClass localSpec = new LocalSpecificClass();
 
-            int localInt = localSpec.localInt; // hidden-data
-            System.out.println("Get localInt from inner scope:" + localInt);
+//            localInt = localSpec.localInt; // hidden-data
+//            System.out.println("Get localInt from inner scope:" + localInt);
+//            System.out.println(localSpec);
+            System.out.println("Get localInt from outer scope:" + localInt);
 
-            System.out.println(localSpec);
         }
 
-        public int getLocalInt() {
-            return localInt;
-        }
     }
 }

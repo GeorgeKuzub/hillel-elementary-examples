@@ -41,7 +41,11 @@ public class IOStreams {
         String name = "Lexus";
         int[] repairYears = {2001, 2004, 2008, 2012, 2017};
 
-        try (DataOutputStream dataOutput = new DataOutputStream(new GZIPOutputStream(new BufferedOutputStream(new FileOutputStream(new File("res/data.zip")))))) {
+        try (DataOutputStream dataOutput = new DataOutputStream(
+                new GZIPOutputStream(
+                        new BufferedOutputStream(
+                                new FileOutputStream(
+                                        new File("res/data.zip")))))) {
             dataOutput.writeByte(age);
             dataOutput.writeUTF(name);
             for (int yearElement : repairYears) {
@@ -57,7 +61,7 @@ public class IOStreams {
         String name;
         int[] repairYears;
 
-        try (DataInputStream dataInput = new DataInputStream(new GZIPInputStream(new BufferedInputStream(new FileInputStream(new File("res/data.zip")))))) {
+        try (DataInputStream dataInput = new DataInputStream(new GZIPInputStream(new FileInputStream(new File("res/data.zip"))))) {
             age = dataInput.readByte();
             repairYears = new int[age];
             name = dataInput.readUTF();
@@ -224,7 +228,8 @@ public class IOStreams {
     }
 
     public static void save(Car car) {
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("res/car.dat"))) {
+        try (ObjectOutputStream outputStream =
+                     new ObjectOutputStream(new FileOutputStream("res/car.dat"))) {
             outputStream.writeObject(car);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -234,7 +239,8 @@ public class IOStreams {
     }
 
     public static Car load() {
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("res/car.dat"))) {
+        try (ObjectInputStream inputStream = new ObjectInputStream(
+                new FileInputStream("res/car.dat"))) {
             return (Car) inputStream.readObject();
         } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);

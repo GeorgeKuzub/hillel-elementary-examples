@@ -3,7 +3,7 @@ package io;
 import java.io.Serializable;
 
 public class Car implements Serializable {
-    private static final long serialVersionUID = 1;
+//    private static final long serialVersionUID = 1;
     private final String brand;
     private final String owner;
     private final int year2;

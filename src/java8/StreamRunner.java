@@ -41,7 +41,7 @@ public class StreamRunner {
 
     public static void distinctExample() {
 //        Consumer<String> consumer = System.out::println;
-        Stream.of("hello", "hi", "hi").distinct().forEach(s);
+//        Stream.of("hello", "hi", "hi").distinct().forEach();
     }
 
     public static void filterExample() {
