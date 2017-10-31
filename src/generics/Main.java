@@ -36,6 +36,8 @@ public class Main {
     }
 
     public static <T> Pair<T> altPairSwap(Pair<T> inPair) {
-        return new Pair<>(inPair.getSecond(), inPair.getFirst());
+        T pair1 = inPair.getFirst();
+        T pair2 = inPair.getSecond();
+        return new Pair<>(pair2, pair1);
     }
 }

@@ -22,4 +22,12 @@ public class Pair<T> {
         first = second;
         second = temp;
     }
+
+    @Override
+    public String toString() {
+        return "Pair{" +
+                "first=" + first +
+                ", second=" + second +
+                '}';
+    }
 }
