@@ -7,9 +7,9 @@ import java.util.stream.Stream;
 public class StreamRunner2 {
 
     private static void builderExample() {
-        Stream.builder().add(1).add(2).add(4).build().forEach(System.out::println);
-    }
+        Stream.builder().add(1).add(2).add(4).build().forEach(x -> System.out.println(x));
 
+    }
 
     private static void skipExample() {
         Arrays.asList("John", "Maria", "Eugene", "Elena").stream()

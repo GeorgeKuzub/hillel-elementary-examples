@@ -29,7 +29,7 @@ public class Employee {
 //    }
 
 
-    Employee(String n) {
+    public Employee(String n) {
         this(n, 0, 0, 0, 0);
     }
 
@@ -83,5 +83,8 @@ public class Employee {
         return getClass().getSimpleName();
     }
 
-
+    @Override
+    public String toString() {
+        return "[" + name + "]";
+    }
 }
