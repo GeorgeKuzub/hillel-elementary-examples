@@ -5,41 +5,42 @@ import java.util.function.*;
 
 public class App {
     public static void main(String[] args) {
-
+        predicate();
+//        binaryOperator();
     }
 
-    public void predicate() {
+    public static void predicate() {
         Predicate<Integer> isPositive = x -> x > 0;
 
         System.out.println(isPositive.test(5)); // true
         System.out.println(isPositive.test(-7)); // false
     }
 
-    public void binaryOperator() {
+    public static void binaryOperator() {
         BinaryOperator<Integer> multiply = (x, y) -> x * y;
 
         System.out.println(multiply.apply(3, 5)); // 15
         System.out.println(multiply.apply(10, -2)); // -20
     }
 
-    public void unaryOperator() {
+    public static void unaryOperator() {
         UnaryOperator<Integer> square = x -> x * x;
         System.out.println(square.apply(5)); // 25
     }
 
-    public void function() {
+    public static void function() {
         Function<Integer, String> convert = x -> String.valueOf(x) + " долларов";
         System.out.println(convert.apply(5)); // 5 долларов
     }
 
 
-    public void consumer() {
+    public static void consumer() {
         Consumer<Integer> printer = x -> System.out.printf("%d долларов \n", x);
         printer.accept(600); // 600 долларов
     }
 
 
-    public void supplier() {
+    public static void supplier() {
         Supplier<User> userFactory = () -> {
 
             Scanner in = new Scanner(System.in);

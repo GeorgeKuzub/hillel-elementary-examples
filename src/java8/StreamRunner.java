@@ -1,5 +1,6 @@
 package java8;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -9,7 +10,23 @@ import java.util.stream.Stream;
 
 public class StreamRunner {
 
+    public static void initStream() {
+//            Stream.of("ABC", "CDB", "ADF")
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+
+        list.stream()
+                .filter(e -> (e == 2 || e == 3))
+                .map(String::valueOf)
+                .limit(3)
+                .forEach(System.out::println);
+    }
+
     public static boolean allMatchExample() {
+
         return Arrays.asList(1, 2, 3).stream().allMatch(new Predicate<Integer>() {
             @Override
             public boolean test(Integer integer) {
@@ -31,7 +48,7 @@ public class StreamRunner {
     public static void concatExample() {
         Stream.concat(
                 Arrays.stream(new String[]{"hello", "hi"}),
-                Stream.of("buy")
+                Stream.of("buy", "sell", "bought")
         ).forEach(System.out::println);
     }
 
@@ -40,8 +57,9 @@ public class StreamRunner {
     }
 
     public static void distinctExample() {
-//        Consumer<String> consumer = System.out::println;
-//        Stream.of("hello", "hi", "hi").distinct().forEach();
+        Consumer<String> consumer = System.out::println;
+        Stream.of("hello", "hi", "hi").
+                distinct().forEach(System.out::println);
     }
 
     public static void filterExample() {
@@ -51,6 +69,7 @@ public class StreamRunner {
                 System.out.println(s);
             }
         };
+
         Stream.concat(
                 Arrays.stream(new String[]{"hello", "hi"}),
                 Stream.of("buy")
@@ -83,7 +102,7 @@ public class StreamRunner {
     }
 
     public static void iterateExample() {
-        Stream.iterate(2, x -> x + 1)
+        Stream.iterate(2, x -> x + 2)
                 .limit(10)
                 .forEach(System.out::println);
     }
@@ -99,7 +118,7 @@ public class StreamRunner {
         Person person2 = new Person("Maria", "Doe");
         Person person3 = new Person("Vitaliy", "Tsukerman");
 
-        Stream.of(person1, person2, person3)
+        Stream myStream = Stream.of(person1, person2, person3)
                 .filter(p -> {
                     System.out.println("filer1: " + p.getName());
                     return p.getSurname().equals("Doe");
@@ -111,9 +130,11 @@ public class StreamRunner {
                 .map(p -> {
                     System.out.println("map: " + p.getName());
                     return p.getName();
-                })
-                .forEach(n -> {
-                    System.out.println("forEach: " + n);
+                });
+
+                myStream
+                        .forEach(
+                                n -> { System.out.println("forEach: " + n);
                 });
     }
 
@@ -130,7 +151,8 @@ public class StreamRunner {
     }
 
     public static void main(String[] args) {
-        intStreamExample();
+        forEachOrderedExample();
+
     }
 
     public static void peekExample() {
