@@ -3,7 +3,6 @@ package java8;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.IntStream;
 
 public class IntStreamRunner {
@@ -13,10 +12,6 @@ public class IntStreamRunner {
 
     private static void averageExample() {
         IntStream.range(0, 10).average().ifPresent(System.out::println);
-    }
-
-    private static void boxedExample() {
-        IntStream.range(0, 10).boxed().map(Function.identity());
     }
 
     private static void rangeExample() {
@@ -41,15 +36,18 @@ public class IntStreamRunner {
         IntStream.range(0, 10)
                 .mapToObj(String::valueOf)
                 .forEach(System.out::println);
+
+
     }
 
     private static void summaryStatisticsExample() {
         IntSummaryStatistics statistics = IntStream.range(0, 100).summaryStatistics();
-//        statistics.accept(5000);
+//        statistics.applyPrint(5000);
         System.out.println(statistics.getAverage());
     }
 
     public static void main(String[] args) {
-        summaryStatisticsExample();
+//        summaryStatisticsExample();
+        averageExample();
     }
 }
