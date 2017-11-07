@@ -3,15 +3,27 @@ package db;
 import java.sql.*;
 
 public class HSQL_Demo {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main2() throws ClassNotFoundException, SQLException {
 
         Connection connection = null;
 
 
-        //Registering the HSQLDB JDBC driver
-        Class.forName("org.hsqldb.jdbc.JDBCDriver");
-        //Creating the connection with HSQLDB
-        connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/testdb", "SA", "");
+        //Registering the JDBC driver
+        Class.forName("com.mysql.jdbc.Driver");
+        //Creating the connection with the DB
+//        connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/testdb", "SA", "");
+
+
+        connection = DriverManager.getConnection("jdbc:mysql://localhost/test?" +
+        "user=minty&password=greatsqldb");
+
+
+
+        Class.forName("com.mysql.jdbc.Driver");
+
+        Connection connnection = DriverManager
+                .getConnection("jdbc:mysql://localhost:3306/dbName", "root", "password");
+
         if (connection != null) {
             System.out.println("Connection created successfully");
 
@@ -114,4 +126,5 @@ public class HSQL_Demo {
         stmt.close();
         connection.close();
     }
+
 }
