@@ -3,9 +3,9 @@ package db;
 import java.sql.*;
 
 public class HSQL_Demo {
-    public static void main2() throws ClassNotFoundException, SQLException {
+    public static void main() throws ClassNotFoundException, SQLException {
 
-        Connection connection = null;
+        Connection connection;
 
 
         //Registering the JDBC driver
