@@ -36,7 +36,7 @@ public class MergeSort {
 
     private void merge(int low, int middle, int high) {
 
-        // Copy both parts into the helper array
+        // Copy both parts into the Info array
         for (int i = low; i <= high; i++) {
             helper[i] = numbers[i];
         }

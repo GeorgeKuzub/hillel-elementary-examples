@@ -11,9 +11,9 @@ public class ToyDepartment extends AbstractDepartment {
     @Override
     public void checkProduct(AbstractProduct abstractProduct) {
         if (Helper.getChoice()) {
-            System.out.println("The product is fully workable.");
+            System.out.println("The Product is fully workable.");
         } else {
-            System.out.println("The product isn't fully workable. Please, try again or return it again to the shop.");
+            System.out.println("The Product isn't fully workable. Please, try again or return it again to the shop.");
         }
     }
 }

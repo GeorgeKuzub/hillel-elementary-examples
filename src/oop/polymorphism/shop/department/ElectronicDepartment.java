@@ -13,12 +13,12 @@ public class ElectronicDepartment extends AbstractDepartment {
     public void checkProduct(AbstractProduct device) {
         if (device instanceof ElectronicDeviceInterface) {
             if (new ElectronicTestingTable((ElectronicDeviceInterface) device).check()) {
-                System.out.println("The product " + device.getName() + " is an electronic device and it works very nice! ");
+                System.out.println("The Product " + device.getName() + " is an electronic device and it works very nice! ");
             } else {
-                System.out.println("The product is an electronic device and it doesn't work normally! ");
+                System.out.println("The Product is an electronic device and it doesn't work normally! ");
             }
         } else {
-            System.out.println("The product(device) doesn't fit to electronic device and it cannnot be checked on Electronic Testing Table.");
+            System.out.println("The Product(device) doesn't fit to electronic device and it cannnot be checked on Electronic Testing Table.");
         }
     }
 

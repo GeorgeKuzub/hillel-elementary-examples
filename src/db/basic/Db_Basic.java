@@ -1,28 +1,23 @@
-package db;
+package db.basic;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
-public class HSQL_Demo {
-    public static void main() throws ClassNotFoundException, SQLException {
+public class Db_Basic {
+    public static void main(String[] args) throws Exception {
 
         Connection connection;
 
-
         //Registering the JDBC driver
-        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("org.hsqldb.jdbc.JDBCDriver");
         //Creating the connection with the DB
-//        connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/testdb", "SA", "");
+        connection = DriverManager.getConnection("jdbc:hsqldb:hsql://192.168.1.104:9001/xdb", "SA", "");
 
 
-        connection = DriverManager.getConnection("jdbc:mysql://localhost/test?" +
-        "user=minty&password=greatsqldb");
-
-
-
-        Class.forName("com.mysql.jdbc.Driver");
-
-        Connection connnection = DriverManager
-                .getConnection("jdbc:mysql://localhost:3306/dbName", "root", "password");
+//        Connection connnection = DriverManager
+//                .getConnection("jdbc:mysql://localhost:3306/dbName", "root", "password");
 
         if (connection != null) {
             System.out.println("Connection created successfully");
@@ -37,9 +32,9 @@ public class HSQL_Demo {
 
         stmt = connection.createStatement();
         sql = "CREATE TABLE IF NOT EXISTS company" +
-                "(ID INT PRIMARY KEY     NOT NULL," +
-                " NAME           TEXT    NOT NULL, " +
-                " AGE            INT     NOT NULL, " +
+                "(ID INTEGER PRIMARY KEY     NOT NULL," +
+                " NAME           VARCHAR(200)    NOT NULL, " +
+                " AGE            INTEGER     NOT NULL, " +
                 " ADDRESS        CHAR(50), " +
                 " SALARY         REAL)";
         stmt.executeUpdate(sql);
@@ -126,5 +121,4 @@ public class HSQL_Demo {
         stmt.close();
         connection.close();
     }
-
 }
