@@ -1,8 +1,8 @@
 package db.dao;
 
+import db.dao.dblogic.ProductDbDao;
 import db.dao.domains.Product;
 import db.dao.interfaces.Dao;
-import db.dao.logic.ProductDbDao;
 
 public class DbDaoMain {
     public static void main(String[] args) {

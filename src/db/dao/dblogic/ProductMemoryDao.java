@@ -1,4 +1,4 @@
-package db.dao.logic;
+package db.dao.dblogic;
 
 import db.dao.domains.Product;
 import db.dao.interfaces.Dao;
