@@ -1,6 +1,8 @@
 package datastructure.linkedlist;
 
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import java.util.Iterator;
 
 public class LinkedList implements Iterable<Node> {
@@ -94,6 +96,10 @@ public class LinkedList implements Iterable<Node> {
         leftNode.setNext(rightNode);
         rightNode.setPrev(leftNode);
 
+    }
+
+    public void removeAll() {
+        throw new NotImplementedException();
     }
 
     @Override
