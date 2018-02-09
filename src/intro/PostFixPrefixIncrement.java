@@ -12,6 +12,5 @@ public class PostFixPrefixIncrement {
         System.out.println("k=" + k);
 
         // wrong code
-        // another code
     }
 }
