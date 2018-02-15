@@ -12,7 +12,7 @@ public class Cycles {
     public static void main(String[] args) {
 
         for (int i = 1; i < 9; i++) {
-            System.out.printf("The power of a number %d equal %d \n", i, i * i);
+            System.out.printf("The power of a number %d arrayEqual %d \n", i, i * i);
         }
 
 
@@ -61,7 +61,7 @@ public class Cycles {
 //        // Infinity cycle2
 //        int i = 1;
 //        for (; ; ) {
-//            System.out.printf("The power of a number %d equal %d \n", i, i * i);
+//            System.out.printf("The power of a number %d arrayEqual %d \n", i, i * i);
 //        }
 
     }

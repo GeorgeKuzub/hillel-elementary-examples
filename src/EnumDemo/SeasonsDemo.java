@@ -12,13 +12,13 @@ public class SeasonsDemo {
         if (autumn != spring) {
             System.out.println("\n 'autumn' and 'spring' moths are different months");
         } else {
-            System.out.println("If you can see this message it means a very strange situation since 'autumn' can be equal to 'spring'.");
+            System.out.println("If you can see this message it means a very strange situation since 'autumn' can be arrayEqual to 'spring'.");
         }
 
         String strSummer = "Summer";
         Season summer2 = Season.valueOf(strSummer);
 
-        System.out.println("summer2 is equal: " + summer2);
+        System.out.println("summer2 is arrayEqual: " + summer2);
 
         showAllOrdinals();
         showCodeEachSeason();

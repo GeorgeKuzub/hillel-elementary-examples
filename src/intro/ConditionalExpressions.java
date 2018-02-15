@@ -23,7 +23,7 @@ public class ConditionalExpressions {
         } else if (num5 < num6) {
             System.out.println("First is less than second");
         } else {
-            System.out.println("First and second are equal");
+            System.out.println("First and second are arrayEqual");
         }
 
 
@@ -52,7 +52,7 @@ public class ConditionalExpressions {
                 break;
 
             default:
-                System.out.println("Num doesn't equal to 1, 8, 9");
+                System.out.println("Num doesn't arrayEqual to 1, 8, 9");
         }
 
         // Ternary expression
