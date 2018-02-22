@@ -11,6 +11,6 @@ public class Pet {
     }
 
     void voice() {
-        System.out.println(".....");
+        System.out.println("Bla-Bla!");
     }
 }

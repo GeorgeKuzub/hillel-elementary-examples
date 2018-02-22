@@ -17,7 +17,7 @@ public class DemoColors {
 
         Colors[] arrColors = Colors.values();
         for (Colors color : arrColors) {
-            System.out.print(color + "; ");
+            System.out.print(color +" [" + color.getVal() + "] ; ");
         }
         System.out.println();
         System.out.println("The ordinal number for blue is :" + blue.ordinal());

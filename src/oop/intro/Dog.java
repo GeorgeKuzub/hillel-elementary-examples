@@ -11,7 +11,7 @@ public class Dog extends Pet {
         this.speciality = speciality;
     }
 
-    @Override
+
     void move() {
         System.out.println("Dog is running");
     }
