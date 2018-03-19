@@ -28,28 +28,7 @@ public class LinkedBookList {
         lastNode.setNext(createdNode);
         size++;
     }
-
-//    public void remove(Book book) {
-//        if (size == 0) return;
-//
-//        if (head.getPair().getValue().equals(book)) {
-//            head = head.getNext();
-//            size--;
-//            return;
-//        }
-//
-//        Node current = head;
-//        while (current != null) {
-//            if (size > 1 && current.getNext().getPair().getValue().equals(book)) {
-//                current.setNext(current.getNext().getNext());
-//                size--;
-//                return;
-//            }
-//
-//            current = current.getNext();
-//        }
-//    }
-
+    
     public void remove(String key) {
         if (size == 0) return;
 
@@ -69,18 +48,6 @@ public class LinkedBookList {
             current = current.getNext();
         }
     }
-
-//    public Node find(Book book) {
-//        Node current = head;
-//
-//        while (current == null) {
-//            if (current.getPair().getValue().equals(book)) {
-//                return current;
-//            }
-//            current = current.getNext();
-//        }
-//        return null;
-//    }
 
     public Node find(String key) {
         Node current = head;

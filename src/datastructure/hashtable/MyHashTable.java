@@ -33,6 +33,9 @@ public class MyHashTable implements HashTable {
 
         LinkedBookList list = table[h];
         list.remove(key);
+        if (list.getFirst() == null) {
+            table[h] = null;
+        }
         return true;
     }
 
@@ -58,9 +61,9 @@ public class MyHashTable implements HashTable {
     private int getHash(String key) {
         int s = key.length();
         if (s > SIZE ) {
-            throw new RuntimeException("Size of hash is more than default value(255)");
+            System.out.println("Size of hash is more than default value(255)");
+            System.exit(-1);
         }
-
         return s;
     }
 
