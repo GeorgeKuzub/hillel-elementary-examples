@@ -1,7 +1,6 @@
 package datastructure.hashtable.singlelist;
 
 
-import datastructure.hashtable.Book;
 import datastructure.hashtable.Pair;
 
 public class LinkedBookList {
