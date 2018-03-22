@@ -30,6 +30,13 @@ public class Node {
     }
 
     public void show() {
-        System.out.println(data);
+        System.out.println(toString());
     }
+
+    @Override
+    public String toString() {
+        return "data = {" + data + "}" ;
+    }
+
+
 }

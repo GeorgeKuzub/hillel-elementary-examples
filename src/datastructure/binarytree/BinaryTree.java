@@ -64,7 +64,64 @@ public class BinaryTree {
         return null;
     }
 
-    public boolean remove() {
+    public boolean remove(int data) {
+        if (root == null) return false;
+
+        Node current = root;
+        Node parent = root;
+        boolean isLeftChild = true;
+
+        while (true) {
+            if (current.getData() == data) {
+                break;
+            }
+
+            parent = current;
+
+            if (data < current.getData()) {
+                current = current.getLeft();
+                isLeftChild = true;
+            } else {
+                current = current.getRight();
+                isLeftChild = false;
+            }
+
+            if (current == null) {
+                return false;
+            }
+        }
+
+        if (current.getLeft() == null && current.getRight() == null) {
+            if (current == root) {
+                root = null;
+            } else if (isLeftChild) {
+                parent.setLeft(null);
+            } else {
+                parent.setRight(null);
+            }
+        }
+
+
+        if (current.getRight() == null) {
+            if (current == root) {
+                root = current.getLeft();
+            } else if (isLeftChild) {
+                parent.setLeft(current.getLeft());
+            } else {
+                parent.setRight(current.getLeft());
+            }
+        } else if (current.getLeft() == null) {
+            if (current == null) {
+                root = root.getRight();
+            } else if (isLeftChild) {
+                parent.setLeft(current.getRight());
+            } else {
+                parent.setRight(current.getRight());
+            }
+        }
+
+
+
         return true;
     }
 
@@ -95,6 +152,15 @@ public class BinaryTree {
         inOrder(node.getRight());
     }
 
+    public void reverseOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.getRight());
+        node.show();
+        inOrder(node.getLeft());
+    }
+
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         binaryTree.add(30);
@@ -113,6 +179,28 @@ public class BinaryTree {
         binaryTree.add(57);
         binaryTree.add(90);
 
+        System.out.println("In order traverse:");
+        binaryTree.inOrder(binaryTree.getRoot());
+
+        System.out.println("\nReverse order");
+        binaryTree.reverseOrder(binaryTree.getRoot());
+
+        System.out.println("\nMax element:");
+        System.out.println(binaryTree.getMaxValue());
+
+        System.out.println("\nMin element: ");
+        System.out.println(binaryTree.getMinValue());
+
+        System.out.println("Trying to find exist element element:");
+        System.out.println(binaryTree.find(60));
+
+        System.out.println("Trying to find not exist element: ");
+        System.out.println(binaryTree.find(1000));
+
+        System.out.println("Trying to remove an element, a leaf or last element that" +
+                "has only one child: ");
+        binaryTree.remove(90);
+        System.out.println("and show again the new tree below: ");
         binaryTree.inOrder(binaryTree.getRoot());
     }
 
