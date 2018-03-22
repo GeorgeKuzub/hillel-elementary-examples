@@ -161,6 +161,24 @@ public class BinaryTree {
         inOrder(node.getLeft());
     }
 
+    public void preOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        node.show();
+        inOrder(node.getLeft());
+        inOrder(node.getRight());
+    }
+
+    public void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.getLeft());
+        inOrder(node.getRight());
+        node.show();
+    }
+
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         binaryTree.add(30);
