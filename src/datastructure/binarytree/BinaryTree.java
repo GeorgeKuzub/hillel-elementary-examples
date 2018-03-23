@@ -136,7 +136,14 @@ public class BinaryTree {
             current = current.getLeft();
         }
         removed.setData(current.getData()); // replacement: copy data from minimum element to removed element
-        parent.setLeft(null);
+
+        if ((current.getLeft() == null) && (current.getRight() == null)) {
+            parent.setLeft(null);
+        } else {
+            parent.setLeft(current.getRight());
+            current.setRight(null);
+        }
+
 
         return true;
     }
@@ -214,35 +221,35 @@ public class BinaryTree {
         binaryTree.add(43);
         binaryTree.add(57);
         binaryTree.add(90);
-        binaryTree.add(56);
         binaryTree.add(58);
 
+        System.out.println("In order traverse:");
+        binaryTree.inOrder(binaryTree.getRoot());
+
+        System.out.println("\nReverse order");
+        binaryTree.reverseOrder(binaryTree.getRoot());
+
+        System.out.println("\nMax element:");
+        System.out.println(binaryTree.getMaxValue());
+
+        System.out.println("\nMin element: ");
+        System.out.println(binaryTree.getMinValue());
+
+        System.out.println("\nTrying to find exist element element:");
+        System.out.println(binaryTree.find(60));
+
+        System.out.println("\nTrying to find not exist element: ");
+        System.out.println(binaryTree.find(1000));
+
+        System.out.println("\nTrying to remove an element, a leaf or last element that" +
+                "has only one child: ");
+        binaryTree.remove(90);
+        System.out.println("and show again (in reverse order) the new tree below: ");
+        binaryTree.reverseOrder(binaryTree.getRoot());
+
+        System.out.println("\nTrying to remove an element that has children ");
         binaryTree.remove(45);
         binaryTree.inOrder(binaryTree.getRoot());
-//
-//        System.out.println("In order traverse:");
-//        binaryTree.inOrder(binaryTree.getRoot());
-//
-//        System.out.println("\nReverse order");
-//        binaryTree.reverseOrder(binaryTree.getRoot());
-//
-//        System.out.println("\nMax element:");
-//        System.out.println(binaryTree.getMaxValue());
-//
-//        System.out.println("\nMin element: ");
-//        System.out.println(binaryTree.getMinValue());
-//
-//        System.out.println("Trying to find exist element element:");
-//        System.out.println(binaryTree.find(60));
-//
-//        System.out.println("Trying to find not exist element: ");
-//        System.out.println(binaryTree.find(1000));
-//
-//        System.out.println("Trying to remove an element, a leaf or last element that" +
-//                "has only one child: ");
-//        binaryTree.remove(90);
-//        System.out.println("and show again (in reverse order) the new tree below: ");
-//        binaryTree.reverseOrder(binaryTree.getRoot());
     }
 
 }
