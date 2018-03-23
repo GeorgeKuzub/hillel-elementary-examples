@@ -156,9 +156,9 @@ public class BinaryTree {
         if (node == null) {
             return;
         }
-        inOrder(node.getRight());
+        reverseOrder(node.getRight());
         node.show();
-        inOrder(node.getLeft());
+        reverseOrder(node.getLeft());
     }
 
     public void preOrder(Node node) {
@@ -218,8 +218,8 @@ public class BinaryTree {
         System.out.println("Trying to remove an element, a leaf or last element that" +
                 "has only one child: ");
         binaryTree.remove(90);
-        System.out.println("and show again the new tree below: ");
-        binaryTree.inOrder(binaryTree.getRoot());
+        System.out.println("and show again (in reverse order) the new tree below: ");
+        binaryTree.reverseOrder(binaryTree.getRoot());
     }
 
 }
