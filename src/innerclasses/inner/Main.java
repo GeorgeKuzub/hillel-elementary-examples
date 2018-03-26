@@ -16,11 +16,12 @@ public class Main {
         // Getting the special object that supports iteration only from left to right direction
         List.Iterator iterator = list.getIterator();
 
-
+        System.out.println("One direction iterating: ");
         while (!iterator.end()) {
             System.out.println(iterator.current());
             iterator.next();
         }
+        System.out.println();
     }
 
     public static void demoTwoDirectionIterator() {
@@ -36,6 +37,8 @@ public class Main {
         // Here from left to right to until we get the end of our list
 
         ExtendedList.BiIterator biIterator = extendedList.getIterator();
+
+        System.out.println("Two direction demonstration of iterating: ");
 
         while (!biIterator.end()) {
             System.out.println(biIterator.current());
