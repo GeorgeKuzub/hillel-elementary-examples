@@ -1,6 +1,6 @@
 package jcf;
 
-public class Car {
+public class Car implements Comparable<Car> {
     private String name;
     private int year;
 
@@ -42,4 +42,8 @@ public class Car {
         return name != null ? name.hashCode() + year*17: 0;
     }
 
+    @Override
+    public int compareTo(Car anotherCar) {
+        return this.year - anotherCar.year;
+    }
 }
