@@ -8,7 +8,7 @@ public class MainClass {
     }
 
     public static void callDemoStack() {
-        System.out.println("Stack Characters Demo:");
+        System.out.println("Stack Characters MapDemo:");
 
         StackC stack = new StackC(5);
         stack.push('a');
@@ -34,7 +34,7 @@ public class MainClass {
 
 
     public static void callDemoQueue() {
-        System.out.println("Queue For Long Numbers Demo:");
+        System.out.println("Queue For Long Numbers MapDemo:");
         MyQueue myQueue = new MyQueue(5);
 
         myQueue.add(10);

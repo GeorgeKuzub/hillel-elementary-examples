@@ -3,7 +3,7 @@ package jcf;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DemoClass {
+public class ListDemo {
     public static void main(String[] args) {
         List<Integer> listInt = new ArrayList<>();
         listInt.add(0);
@@ -17,5 +17,24 @@ public class DemoClass {
             System.out.println(e);
         }
         System.out.println(listInt.size());
+
+        List listObjs = new ArrayList();
+        listObjs.add("str");
+        listObjs.add(11);
+        listObjs.add('a');
+        listObjs.add(1.3D);
+        listObjs.add(true);
+
+
+    }
+
+    public void processElements(List lst) {
+        for (Object e : lst) {
+            if (e instanceof String) {
+              // do someything
+            } else if (e instanceof Integer) {
+                //
+            }
+        }
     }
 }
