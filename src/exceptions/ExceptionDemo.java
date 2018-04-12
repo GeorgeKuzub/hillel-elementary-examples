@@ -5,7 +5,9 @@ public class ExceptionDemo {
     void process(String str) {
 
         try {
-            int i = Integer.parseInt(str);
+            System.out.println("Init part of this program");
+            int i = Integer.parseInt(str); // if exception to be thrown then code below won't be done.
+            System.out.println("unreachable code here in case of an raising exception over.");
         } catch (NumberFormatException e) {
             System.err.println("Format exception problem");
             e.printStackTrace();
