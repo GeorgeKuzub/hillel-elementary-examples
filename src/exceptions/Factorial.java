@@ -5,6 +5,8 @@ public class Factorial {
         try {
             getFactorial(-1);
         } catch (FactorialException e) {
+            System.out.println("You've tried to get the factorial of the number="
+                    + e.getNumber());
             e.printStackTrace();
         }
 
