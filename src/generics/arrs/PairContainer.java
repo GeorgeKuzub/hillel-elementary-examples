@@ -9,8 +9,8 @@ public class PairContainer<T, V> {
     private int ind;
 
     public PairContainer() {
-        this.first = (T[]) new Object[100];
-        this.second = (V[]) new Object[100];
+        this.first = (T[]) new Object[MAX_CAPACITY];
+        this.second = (V[]) new Object[MAX_CAPACITY];
     }
 
     void push(T data1, V data2) {
