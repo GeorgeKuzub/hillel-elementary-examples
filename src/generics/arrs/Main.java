@@ -14,5 +14,7 @@ public class Main {
         System.out.println(entry1.getFirst() + " : " + entry1.getSecond());
         System.out.println(entry2.getFirst() + " : " + entry2.getSecond());
         System.out.println(entry3.getFirst() + " : " + entry3.getSecond());
+
+//        container.pop(); // try uncomment this code :)
     }
 }
