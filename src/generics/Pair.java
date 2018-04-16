@@ -25,7 +25,7 @@ public class Pair<T> {
 
     @Override
     public String toString() {
-        return "Pair{" +
+        return "PairContainer{" +
                 "first=" + first +
                 ", second=" + second +
                 '}';

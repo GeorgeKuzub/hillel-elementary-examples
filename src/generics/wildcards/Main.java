@@ -18,7 +18,7 @@ public class Main {
         listDogs.add(new Dog());
         // printOnlyAnimalCollection(listDogs); -> we can't do it
 
-        // It works, but it's not general way! We had to write specific
+        // It works, but it's not arrs way! We had to write specific
         // method "printOnlyDogCollection" and we can't use it for Animal collection
         printOnlyDogCollection(listDogs);
 
@@ -43,7 +43,7 @@ public class Main {
         }
     }
 
-    // Not general way!
+    // Not arrs way!
     public static void printOnlyDogCollection(List<Dog> list) {
         for (Dog a : list) {
             System.out.println(a);
