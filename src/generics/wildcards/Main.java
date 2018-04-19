@@ -51,7 +51,7 @@ public class Main {
     }
 
     // General approaches:
-    // Wildcards demo bellow
+    // Wildcards pecs bellow
 
     // 1st approach to make printAllExceptSmallDogs animal collection more General
     public static void printCollectionGeneral1(List<? extends Animal> list) {

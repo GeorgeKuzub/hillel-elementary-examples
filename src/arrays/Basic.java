@@ -34,7 +34,7 @@ public class Basic {
         nums7[2] = new int[5];
         int[] ы_в = {1, 2, 2};
 
-        // Foreach demo
+        // Foreach pecs
         int[] myArray = new int[]{1, 2, 3, 4, 5};
         for (int i : myArray) {
             System.out.println(i);
