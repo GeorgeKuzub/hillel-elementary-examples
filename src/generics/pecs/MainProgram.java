@@ -71,10 +71,10 @@ public class MainProgram {
 
 
     // It looks fine at glance, but this variant wont' work for List<Camera> or List<Phone>
-    // But if you pass a List<Camera> this code won't work since List<Product> != List<Camera>
+    // and if you pass a List<Camera> this code won't work since List<Product> != List<Camera>
     // you might create a list of phones or list of cameras and just try to pass to this method.
-    // But you can't do it
-    // so actually you may pass only List<Products> to this code and it will work nicely
+    // But it won't work!
+    // So actually you may pass only List<Products> to this code and it will work nicely.
     private static <E extends Product> boolean containLessGeneric(List<E> all, E e) {
         for (E element : all) {
             if (element.getName().equalsIgnoreCase(e.getName())) {
@@ -93,7 +93,6 @@ public class MainProgram {
         }
         return false;
     }
-
 
     private static void copy(List<? extends Product> src, List<? super Product> dst) {
         for (Product p : src) {
